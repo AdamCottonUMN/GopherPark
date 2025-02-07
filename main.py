@@ -43,3 +43,9 @@ async def websocket_endpoint(websocket: WebSocket):
             await asyncio.sleep(10)  # Refresh every 10 seconds
     except WebSocketDisconnect:
         connected_clients.remove(websocket)  # Remove disconnected client
+
+
+import uvicorn
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
