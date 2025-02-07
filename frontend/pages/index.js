@@ -10,13 +10,12 @@ export default function Home() {
   const [sortKey, setSortKey] = useState(null);
 
   useEffect(() => {
-    const socket = new WebSocket("ws://127.0.0.1:8000/ws/parking");
+    const socket = new WebSocket("wss://gopherpark-production.up.railway.app/ws/parking");
 
     socket.onmessage = (event) => {
       const data = JSON.parse(event.data);
       let newLots = data.lots;
 
-      // 🔥 Preserve Previous Data for Change Detection
       const changes = {};
       newLots.forEach(lot => {
         const prevValue = prevData[lot.garage] || 0;
@@ -27,7 +26,6 @@ export default function Home() {
         }
       });
 
-      // 🔥 Apply Sorting *After* Change Detection
       if (sortKey === "availability") {
         newLots = sortParkingData(newLots, sortOrder);
       }
@@ -57,7 +55,7 @@ export default function Home() {
     return () => socket.close();
   }, [sortOrder, sortKey, prevData]);
 
-  // ✅ Sorting Function
+  // Sorting Function
   const sortParkingData = (data, order) => {
     return [...data].sort((a, b) => {
       const aValue = a.availability === "FULL" ? 0 : parseInt(a.availability) || 0;
@@ -66,7 +64,7 @@ export default function Home() {
     });
   };
 
-  // ✅ Click to Sort
+  // Click to Sort
   const sortByAvailability = () => {
     const newOrder = sortOrder === "asc" ? "desc" : "asc";
     setSortOrder(newOrder);
@@ -97,7 +95,7 @@ export default function Home() {
                       cursor: "pointer", 
                       userSelect: "none" 
                     }}
-                    onClick={sortByAvailability} // ✅ Click to sort
+                    onClick={sortByAvailability} // Click to sort
                   >
                     Availability {sortKey === "availability" ? (sortOrder === "asc" ? "▲" : "▼") : ""}
                   </th>
