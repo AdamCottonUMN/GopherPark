@@ -142,7 +142,7 @@ export default function Home() {
               </ul>
               <p>
                 Data is updated in real-time and may <strong>fluctuate frequently</strong>. 
-                Please check back often or refresh the page for the most current information. Errors in parking availability data may occur due to issues at the parking garages themsevles.
+                Please check back often or refresh the page for the most current information. Errors in parking availability data may occur due to issues at the parking garages themselves.
                 Data is sourced directly from the UW-Madison transportation website. 
                 For more parking info, <a href="https://transportation.wisc.edu/visitor-parking/" className="clickable-link"> visit their website here</a>
               </p>
