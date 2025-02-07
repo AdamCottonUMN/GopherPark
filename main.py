@@ -6,6 +6,10 @@ import asyncio
 
 app = FastAPI()
 
+@app.get("/")
+def read_root():
+    return {"message": "Backend is running!"}
+
 UW_PARKING_URL = "https://transportation.wisc.edu/parking-lots/lot-occupancy-count/"
 connected_clients = set()  # Store active WebSocket connections
 
