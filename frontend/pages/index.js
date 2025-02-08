@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Head from "next/head";  // Import Head for favicon
 import Header from "../components/Header";  // Import Header component
 
 export default function Home() {
