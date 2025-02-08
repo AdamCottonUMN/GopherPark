@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Head from "next/head";  // Import Head for favicon
 import Header from "../components/Header";  // Import Header component
 
 export default function Home() {
@@ -74,9 +75,11 @@ export default function Home() {
 
   return (
     <div style={{ fontFamily: "Arial, sans-serif", textAlign: "center", backgroundColor: "#FFF8DC", minHeight: "100vh", paddingBottom: "20px", color: 'black !important' }}>
-      <Header>
+      <Head>
         <link rel="icon" href="/gopherpark-favicon.png" type="image/png" />
-      </Header>
+      </Head>
+      
+      <Header />
       <div style={{ paddingTop: "80px", maxWidth: "900px", margin: "auto", color: 'black !important' }}>
         <h1 style={{ color: 'black !important' }}>UW Madison Parking Availability</h1>
         <p style={{ color: 'black !important' }}>Last updated: {new Date(lastUpdated).toLocaleString()}</p>
