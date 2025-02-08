@@ -82,7 +82,6 @@ export default function Home() {
       <Header />
       <div style={{ paddingTop: "80px", maxWidth: "900px", margin: "auto", color: 'black !important' }}>
         <h1 style={{ color: 'black !important' }}>UW Madison Parking Availability</h1>
-        <p style={{ color: 'black !important' }}>Last updated: {new Date(lastUpdated).toLocaleString()}</p>
         {parkingData.length === 0 ? (
           <p style={{ color: 'black !important' }}>Loading parking data...</p>
         ) : (
