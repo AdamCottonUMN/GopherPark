@@ -10,7 +10,7 @@ export default function Home() {
   const [sortKey, setSortKey] = useState(null);
 
   useEffect(() => {
-    const socket = new WebSocket("wss://gopherpark-production.up.railway.app/ws/parking");
+    const socket = new WebSocket("wss://gopherpark-backend-production.up.railway.app/ws/parking");
 
     socket.onmessage = (event) => {
       const data = JSON.parse(event.data);
