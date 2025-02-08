@@ -74,9 +74,9 @@ export default function Home() {
 
   return (
     <div style={{ fontFamily: "Arial, sans-serif", textAlign: "center", backgroundColor: "#FFF8DC", minHeight: "100vh", paddingBottom: "20px", color: 'black !important' }}>
-      <Head>
+      <Header>
         <link rel="icon" href="/gopherpark-favicon.png" type="image/png" />
-      </Head>
+      </Header>
       <div style={{ paddingTop: "80px", maxWidth: "900px", margin: "auto", color: 'black !important' }}>
         <h1 style={{ color: 'black !important' }}>UW Madison Parking Availability</h1>
         <p style={{ color: 'black !important' }}>Last updated: {new Date(lastUpdated).toLocaleString()}</p>
