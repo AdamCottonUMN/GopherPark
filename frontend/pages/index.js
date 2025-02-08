@@ -73,27 +73,28 @@ export default function Home() {
   };
 
   return (
-    <div style={{ fontFamily: "Arial, sans-serif", textAlign: "center", backgroundColor: "#FFF8DC", minHeight: "100vh", paddingBottom: "20px" }}>
+    <div style={{ fontFamily: "Arial, sans-serif", textAlign: "center", backgroundColor: "#FFF8DC", minHeight: "100vh", paddingBottom: "20px", color: 'black !important' }}>
       <Header />
-      <div style={{ paddingTop: "80px", maxWidth: "900px", margin: "auto" }}>
-        <h1>UW Madison Parking Availability</h1>
-        <p>Last updated: {new Date(lastUpdated).toLocaleString()}</p>
+      <div style={{ paddingTop: "80px", maxWidth: "900px", margin: "auto", color: 'black !important' }}>
+        <h1 style={{ color: 'black !important' }}>UW Madison Parking Availability</h1>
+        <p style={{ color: 'black !important' }}>Last updated: {new Date(lastUpdated).toLocaleString()}</p>
         {parkingData.length === 0 ? (
-          <p>Loading parking data...</p>
+          <p style={{ color: 'black !important' }}>Loading parking data...</p>
         ) : (
           <>
-            <table style={{ width: "100%", borderCollapse: "collapse", marginTop: "20px", backgroundColor: "white", borderTop: "3px solid maroon", borderBottom: "2px solid maroon" }}>
+            <table style={{ width: "100%", borderCollapse: "collapse", marginTop: "20px", backgroundColor: "white", borderTop: "3px solid maroon", borderBottom: "2px solid maroon", color: 'black !important' }}>
               <thead>
                 <tr style={{ backgroundColor: "#FFFD96", borderBottom: "2px solid maroon" }}>
-                  <th style={{ padding: "10px", borderLeft: "2px solid maroon", borderRight: "2px solid maroon" }}>Region</th>
-                  <th style={{ padding: "10px", borderLeft: "2px solid maroon", borderRight: "2px solid maroon" }}>Garage</th>
+                  <th style={{ padding: "10px", borderLeft: "2px solid maroon", borderRight: "2px solid maroon", color: 'black !important' }}>Region</th>
+                  <th style={{ padding: "10px", borderLeft: "2px solid maroon", borderRight: "2px solid maroon", color: 'black !important' }}>Garage</th>
                   <th 
                     style={{ 
                       padding: "10px", 
                       borderLeft: "2px solid maroon", 
                       borderRight: "2px solid maroon", 
                       cursor: "pointer", 
-                      userSelect: "none" 
+                      userSelect: "none",
+                      color: 'black !important'
                     }}
                     onClick={sortByAvailability} // Click to sort
                   >
@@ -104,8 +105,8 @@ export default function Home() {
               <tbody>
                 {parkingData.map((garage, index) => (
                   <tr key={index} style={{ borderBottom: "1px solid #ddd", backgroundColor: "white" }}>
-                    <td style={{ padding: "10px", borderLeft: "2px solid maroon", borderRight: "2px solid maroon" }}>{garage.region}</td>
-                    <td style={{ padding: "10px", borderLeft: "2px solid maroon", borderRight: "2px solid maroon" }}>{garage.garage}</td>
+                    <td style={{ padding: "10px", borderLeft: "2px solid maroon", borderRight: "2px solid maroon", color: 'black !important' }}>{garage.region}</td>
+                    <td style={{ padding: "10px", borderLeft: "2px solid maroon", borderRight: "2px solid maroon", color: 'black !important' }}>{garage.garage}</td>
                     <td style={{
                       padding: "10px",
                       fontWeight: "bold",
@@ -129,18 +130,18 @@ export default function Home() {
               </tbody>
             </table>
 
-            <div style={{ marginTop: "75px", padding: "15px", backgroundColor: "white", borderRadius: "8px", border: "4px solid maroon", textAlign: "left", lineHeight: "40px" }}>
-              <h3 style={{ textAlign: "center" }}>About This Data</h3>
-              <p>
+            <div style={{ marginTop: "75px", padding: "15px", backgroundColor: "white", borderRadius: "8px", border: "4px solid maroon", textAlign: "left", lineHeight: "40px", color: 'black !important' }}>
+              <h3 style={{ textAlign: "center", color: 'black !important' }}>About This Data</h3>
+              <p style={{ color: 'black !important' }}>
                 This table displays the <strong>real-time parking availability</strong> for various garages on the <strong>UW-Madison</strong> campus. 
                 Availability numbers reflect the number of open spots currently available at each location.
               </p>
-              <ul style={{ marginLeft: "40px" }}>
+              <ul style={{ marginLeft: "40px", color: 'black !important' }}>
                 <li><strong style={{ color: "green" }}>Green Numbers:</strong> Indicates that parking is available.</li>
                 <li><strong style={{ color: "red" }}>Red "FULL":</strong> Indicates that the garage is at maximum capacity.</li>
                 <li><strong>Change in availability:</strong> Denoted by green/red up/down arrows and color flashes.</li>
               </ul>
-              <p>
+              <p style={{ color: 'black !important' }}>
                 Data is updated in real-time and may <strong>fluctuate frequently</strong>. 
                 Please check back often or refresh the page for the most current information. Errors in parking availability data may occur due to issues at the parking garages themselves.
                 Data is sourced directly from the UW-Madison transportation website. 
